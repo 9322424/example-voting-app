@@ -8,7 +8,7 @@ import json
 option_a = os.getenv('OPTION_A', "Digital")
 option_b = os.getenv('OPTION_B', "Mechanical")
 hostname = socket.gethostname()
-version = 'v-adb-3'
+version = 'v-adb-4'
 
 app = Flask(__name__)
 
