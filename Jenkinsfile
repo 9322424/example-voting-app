@@ -50,21 +50,11 @@ pipeline {
             echo 'Packaging vote app with docker'
             script{
               docker.withRegistry('https://index.docker.io/v1/', 'dockerlogin') {
-                  def voteImage = docker.build("xxxxxx/vote:v-adb-${env.BUILD_ID}", "./vote")
+                  def voteImage = docker.build("initcron/vote:v-adb-${env.BUILD_ID}", "./vote")
                   voteImage.push()
                   voteImage.push("latest")
               }
             }
-          }
-      }
-      stage('Deploy to Dev'){
-          agent any
-          when{
-            branch "master"
-          }
-          steps{
-            echo 'Deploy to Dev with Docker Compose'
-              sh 'docker-compose up -d '
           }
       }
   }
