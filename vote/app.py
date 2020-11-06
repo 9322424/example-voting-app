@@ -8,7 +8,7 @@ import json
 option_a = os.getenv('OPTION_A', "Google Home")
 option_b = os.getenv('OPTION_B', "Amazon Echo")
 hostname = socket.gethostname()
-version = 'v-adb-5'
+version = 'v-adb-6'
 
 app = Flask(__name__)
 
